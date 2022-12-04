@@ -1,35 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Profile card component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link href="https://fonts.cdnfonts.com/css/kumbh-sans" rel="stylesheet" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Victor Crest
-  26
-  London
+    <title>Frontend Mentor | Profile card component</title>
 
-  80K
-  Followers
+    <style>
+      :root {
+        /*    ## Colors
+       ### Primary
+      */
+        --primary-color: hsl(185, 75%, 39%); /*Dark cyan*/
+        --secondary-color: hsl(229, 23%, 23%); /*Very dark desaturated blue*/
+        --fcolor: hsl(227, 10%, 46%); /*Dark grayish blue*/
+        /* ### Neutral */
+        --third-color: hsl(0, 0%, 59%); /*Dark gray*/
+        /* ## Typography
+      ### Body Copy */
+        --fsize: 18px;
+        /* ### Font */
+        --f-family: "Kumbh Sans", sans-serif;
+        --f-weight-400: 400;
+        --f-weight-700: 700;
+      }
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-width: 390px;
+        min-height: 400px;
+        background-color: aqua;
+        /* background-image: url(images/bg-pattern-top.svg); */
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      main {
+        width: 100vw;
+        height: 100vh;
+        background-image: url(images/bg-pattern-bottom.svg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: contain;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        font-family: var(--f-family);
+        font-size: var(--fsize);
+        color: var(--secondary-color);
+        font-weight: var(--f-weight-700);
+      }
+      h1,
+      h2 {
+        padding-top: 20px;
+      }
+      h2 {
+        color: var(--third-color);
+        font-weight: var(--f-weight-400);
+        padding-left: 15px;
+      }
 
-  803K
-  Likes
+      h3 {
+        color: var(--third-color);
+        font-weight: var(--f-weight-400);
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 25px;
+      }
+      h4 {
+        padding-top: 20px;
+      }
+      p {
+        color: var(--third-color);
+        font-size: 12px;
+        font-weight: var(--f-weight-400);
+        padding-top: 8px;
+        padding-bottom: 30px;
+      }
 
-  1.4K
-  Photos
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      .row {
+        display: flex;
+      }
+      .row-center {
+        justify-content: center;
+        align-items: center;
+      }
+      .justify-content-even {
+        justify-content: space-evenly;
+      }
+      .flx-dir {
+        flex-direction: column;
+      }
+
+      .frame {
+        border-radius: 1rem;
+        overflow: hidden;
+        background-color: #fff;
+        position: absolute;
+        width: 350px;
+      }
+      #avatar {
+        border: 5px solid white;
+        border-radius: 50%;
+        position: relative;
+        margin-top: -50px;
+      }
+      .divider {
+        border-top: 1px solid hsl(0deg 0% 59% / 50%);
+      }
+      .data {
+        text-align: center;
+        padding-right: 1rem;
+        padding-left: 1rem;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @media (min-width: 600px) {
+      }
+    </style>
+  </head>
+  <body>
+    <main class="row row-center">
+   <!--    <img src="images/bg-pattern-top.svg" alt="" />
+      <img src="images/bg-pattern-bottom.svg" alt="" /> -->
+      <div class="frame row row-center flx-dir">
+        <img src="images/bg-pattern-card.svg" alt="" />
+        <img id="avatar" src="images/image-victor.jpg" alt="image-victor" />
+        <div class="row row-center">
+          <h1>Victor Crest</h1>
+          <h2>26</h2>
+        </div>
+        <h3>London</h3>
+
+        <div class="row justify-content-even divider" style="width: 350px">
+          <div class="data">
+            <h4>80K</h4>
+            <p>Followers</p>
+          </div>
+          <div class="data">
+            <h4>803K</h4>
+            <p>Likes</p>
+          </div>
+          <div class="data">
+            <h4>1.4K</h4>
+            <p>Photos</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</div>
+  </body>
 </html>
